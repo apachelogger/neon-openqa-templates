@@ -1,0 +1,4 @@
+- name: install_default
+  settings:
+    OPENQA_SKIP_SIG_CHECK: 1
+    INSTALLATION: 1

@@ -1,0 +1,14 @@
+- name: 'neon-unstable-bionic'
+  distri: 'neon'
+  flavor: 'unstable'
+  arch: 'amd64'
+  settings:
+    OPENQA_SERIES: bionic
+  version: bionic
+- name: 'neon-unstable-xenial'
+  distri: 'neon'
+  flavor: 'unstable'
+  arch: 'amd64'
+  settings:
+    OPENQA_SERIES: xenial
+  version: xenial

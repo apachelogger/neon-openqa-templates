@@ -1,0 +1,58 @@
+require 'json'
+require 'yaml'
+
+class SettingsConverter
+  def initialize(obj)
+    @obj = obj
+  end
+
+  def convert
+    convert_by_type(@obj)
+  end
+
+  def convert_by_type(o)
+    case o
+    when String, Integer
+      return o
+    when Hash
+      return convert_h(o)
+    when Array
+      return convert_a(o)
+    end
+    raise "Unknown type --> #{o} [#{o.class}]"
+  end
+
+  def convert_h(o)
+    o.each_with_object({}) do |(k, v), hash|
+      hash[k] = convert_by_type(v)
+    end
+  end
+
+  def convert_a(o)
+    o.each_with_object([]) do |v, array|
+      array << convert_by_type(v)
+    end
+  end
+end
+
+def load_yaml(file_name)
+  data = YAML.load_file(File.join(__dir__, 'templates', file_name))
+  SettingsConverter.new(data).convert
+end
+
+templates = {}
+templates['JobTemplates'] = load_yaml('job_templates.yaml')
+templates['Machines'] = load_yaml('machines.yaml')
+templates['Products'] = load_yaml('products.yaml')
+templates['TestSuites'] = load_yaml('test_suites.yaml')
+
+script = <<-SCRIPT_HEADER
+#!/usr/share/openqa/script/load_templates
+#
+# use load_templates to load the file into the database
+#
+# This script is auto-generated from openqa/templates/*.yaml. Any changes here
+# get discarded.
+SCRIPT_HEADER
+script += JSON.generate(templates)
+File.write('templates', script)
