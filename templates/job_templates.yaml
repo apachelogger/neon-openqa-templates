@@ -20,3 +20,14 @@
   prio: 10
   machine:
     name: 64bit
+
+- test_suite:
+    name: plasma
+  product:
+    arch: amd64
+    distri: neon
+    flavor: unstable
+    version: bionic
+  prio: 10
+  machine:
+    name: 64bit

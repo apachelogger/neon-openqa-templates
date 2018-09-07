@@ -19,3 +19,7 @@
   settings:
     OPENQA_SKIP_SIG_CHECK: 1
     INSTALLATION: 1
+
+- name: plasma
+  settings:
+    PLASMA_DESKTOP: 5
