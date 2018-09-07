@@ -48,12 +48,9 @@ def load_yaml(file_name)
 end
 
 unless ENV.include?('IN_FORK')
-  puts 'not in fork'
   pulled = system('git pull --rebase', chdir: __dir__)
   exec({ 'IN_FORK' => '1' }, 'ruby', __FILE__, *ARGV) if pulled
   raise
-else
-  puts 'in fork'
 end
 
 templates = {}
