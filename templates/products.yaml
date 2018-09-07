@@ -1,9 +1,23 @@
+# {
+#   arch      => "x86_64",
+#   distri    => "fedora",
+#   flavor    => "universal",
+#   name      => "",
+#   settings  => [
+#     { key => "TEST_TARGET", value => "ISO" }
+#                ],
+#   version   => "*",
+# },
+
+# FIXME: name seems unused, do we actually need it?
+
 - name: 'neon-unstable-bionic'
   distri: 'neon'
   flavor: 'unstable'
   arch: 'amd64'
   settings:
     OPENQA_SERIES: bionic
+    TYPE: devedition-gitunstable
   version: bionic
 - name: 'neon-unstable-xenial'
   distri: 'neon'
@@ -11,4 +25,5 @@
   arch: 'amd64'
   settings:
     OPENQA_SERIES: xenial
+    TYPE: devedition-gitunstable
   version: xenial

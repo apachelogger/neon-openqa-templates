@@ -1,10 +1,22 @@
+# {
+#   machine    => { name => "64bit" },
+#   prio       => 10,
+#   product    => {
+#                   arch    => "x86_64",
+#                   distri  => "fedora",
+#                   flavor  => "Workstation-live-iso",
+#                   version => "*",
+#                 },
+#   test_suite => { name => "install_default_upload" },
+# },
+
 - test_suite:
     name: install_default
   product:
     arch: amd64
     distri: neon
     flavor: unstable
-    version: '*'
+    version: bionic
   prio: 10
   machine:
     name: 64bit

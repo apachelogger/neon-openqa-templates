@@ -1,3 +1,17 @@
+# {
+#   backend   => "qemu",
+#   name      => "64bit",
+#   settings  => [
+#     { key => "QEMUCPU", value => "Nehalem" },
+#     { key => "QEMUCPUS", value => "2"},
+#     { key => "QEMUVGA", value => "qxl"},
+#     { key => "QEMURAM", value => "2048"},
+#     { key => "PART_TABLE_TYPE", value => "mbr"},
+#     { key => "WORKER_CLASS", value => "qemu_x86_64" },
+#     { key => "QEMU_VIRTIO_RNG", value => "1"}
+#   ],
+# },
+
 - name: '64bit'
   backend: 'qemu'
   settings:

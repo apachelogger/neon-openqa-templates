@@ -60,7 +60,7 @@ script = <<-SCRIPT_HEADER
 #
 # This script is auto-generated from openqa/templates/*.yaml. Any changes here
 # get discarded.
-/usr/share/openqa/script/load_templates templates.json
+/usr/share/openqa/script/load_templates "$@" templates.json
 SCRIPT_HEADER
 File.write('templates', script)
 FileUtils.chmod(0o744, 'templates')
