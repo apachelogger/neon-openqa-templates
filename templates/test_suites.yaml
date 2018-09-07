@@ -19,7 +19,9 @@
   settings:
     OPENQA_SKIP_SIG_CHECK: 1
     INSTALLATION: 1
+    PUBLISH_HDD_1: yolo.qcow2
 
 - name: plasma
   settings:
     PLASMA_DESKTOP: 5
+    HDD_1: yolo.qcow2
