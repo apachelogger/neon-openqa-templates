@@ -47,6 +47,15 @@ def load_yaml(file_name)
   SettingsConverter.new(data).convert
 end
 
+unless ENV.include?('IN_FORK')
+  puts 'not in fork'
+  Dir.chdir(__dir__)
+  exec(['IN_FORK=1'], 'ruby', __FILE__, ARGV) if system('git pull --rebase')
+  raise
+else
+  puts 'in fork'
+end
+
 templates = {}
 templates['JobTemplates'] = load_yaml('job_templates.yaml')
 templates['Machines'] = load_yaml('machines.yaml')
