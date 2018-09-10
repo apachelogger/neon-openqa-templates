@@ -25,3 +25,4 @@
   settings:
     PLASMA_DESKTOP: 5
     HDD_1: yolo.qcow2
+    START_AFTER_TEST: install_default
