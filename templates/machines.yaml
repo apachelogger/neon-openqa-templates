@@ -21,6 +21,7 @@
     WORKER_CLASS: qemu_x86_64
     BIOS: 0
     UEFI: 1
+
 - name: '64bit [BIOS]'
   backend: 'qemu'
   settings:
