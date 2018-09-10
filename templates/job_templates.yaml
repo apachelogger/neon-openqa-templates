@@ -17,7 +17,6 @@
     distri: neon
     flavor: unstable
     version: bionic
-  prio: 10
   machine:
     name: 64bit
 
@@ -28,6 +27,15 @@
     distri: neon
     flavor: unstable
     version: bionic
-  prio: 10
+  machine:
+    name: 64bit
+
+- test_suite:
+    name: upgrade_bionic
+  product:
+    arch: amd64
+    distri: neon
+    flavor: unstable
+    version: xenial
   machine:
     name: 64bit
