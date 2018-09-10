@@ -38,7 +38,7 @@
     arch: amd64
     distri: neon
     flavor: unstable
-    version: bionic
+    version: xenial
   prio: 10
   machine:
     name: 64bit
