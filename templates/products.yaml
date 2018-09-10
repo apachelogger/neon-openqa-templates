@@ -11,20 +11,20 @@
 
 # FIXME: name seems unused, do we actually need it?
 
-- name: 'neon-unstable-bionic'
-  distri: 'neon'
-  flavor: 'unstable'
-  arch: 'amd64'
+- name: neon-unstable-bionic
+  distri: neon
+  version: unstable
+  flavor: bionic
+  arch: amd64
   settings:
     OPENQA_SERIES: bionic
     TYPE: devedition-gitunstable
-  version: bionic
 
-- name: 'neon-unstable-xenial'
-  distri: 'neon'
-  flavor: 'unstable'
-  arch: 'amd64'
+- name: neon-unstable-xenial
+  distri: neon
+  version: unstable
+  flavor: xenial
+  arch: amd64
   settings:
     OPENQA_SERIES: xenial
     TYPE: devedition-gitunstable
-  version: xenial

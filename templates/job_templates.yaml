@@ -12,11 +12,11 @@
 
 - test_suite:
     name: install_default
-  product:
-    arch: amd64
+  product: &unstable_bionic_amd64
     distri: neon
-    flavor: unstable
-    version: bionic
+    version: unstable
+    flavor: bionic
+    arch: amd64
   prio: 10
   machine:
     name: 64bit
@@ -24,21 +24,18 @@
 - test_suite:
     name: plasma
   product:
-    arch: amd64
-    distri: neon
-    flavor: unstable
-    version: bionic
+    <<: *unstable_bionic_amd64
   prio: 10
   machine:
     name: 64bit
 
 - test_suite:
     name: upgrade_bionic
-  product:
-    arch: amd64
+  product: &unstable_xenial_amd64
     distri: neon
-    flavor: unstable
-    version: xenial
+    version: unstable
+    flavor: xenial
+    arch: amd64
   prio: 10
   machine:
     name: 64bit
