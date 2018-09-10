@@ -17,19 +17,19 @@
 
 - name: install_default
   settings:
-    PUBLISH_HDD_1: yolo.qcow2
+    PUBLISH_HDD_1: &install_disk '%DISTRI%-%VERSION%-%ARCH%-%FLAVOR%.qcow2'
     OPENQA_SKIP_SIG_CHECK: 1
     INSTALLATION: 1
 
 - name: plasma
   settings:
     START_AFTER_TEST: install_default
-    HDD_1: yolo.qcow2
+    HDD_1: *install_disk
     PLASMA_DESKTOP: 5
 
 - name: upgrade_bionic
   settings:
     START_AFTER_TEST: install_default
-    HDD_1: yolo.qcow2
+    HDD_1: *install_disk
     TESTS_TO_RUN: tests/install/upgrade_bionic.pm:tests/plasma/plasma_folder.pm:tests/plasma/plasma_lockscreen.pm
     OPENQA_APT_UPGRADE: all

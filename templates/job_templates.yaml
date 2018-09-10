@@ -10,6 +10,8 @@
 #   test_suite => { name => "install_default_upload" },
 # },
 
+# ----------------------------------  Bionic -----------------------------------
+
 - test_suite:
     name: install_default
   product: &unstable_bionic_amd64
@@ -29,13 +31,23 @@
   machine:
     name: 64bit
 
+# ----------------------------------  Xenial -----------------------------------
+
 - test_suite:
-    name: upgrade_bionic
+    name: install_default
   product: &unstable_xenial_amd64
     distri: neon
     version: unstable
     flavor: xenial
     arch: amd64
+  prio: 10
+  machine:
+    name: 64bit
+
+- test_suite:
+    name: upgrade_bionic
+  product:
+    <<: *unstable_xenial_amd64
   prio: 10
   machine:
     name: 64bit
